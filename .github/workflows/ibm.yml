@@ -17,7 +17,7 @@ jobs:
 
     - name: Init
       run: |
-        chmod -R 777 ./IBM_Cloud_CLI/ibmcloud cf install  -v 6.51.0
+        chmod -R 777 ./IBM_Cloud_CLI/ibmcloud cf install
         ./IBM_Cloud_CLI/ibmcloud config --check-version=false
     - name: Login IBM Cloud
       env:
@@ -35,7 +35,7 @@ jobs:
       run: |
         ./IBM_Cloud_CLI/ibmcloud target -g "$RESOURSE_ID"
         ./IBM_Cloud_CLI/ibmcloud target --cf
-        ./IBM_Cloud_CLI/ibmcloud cf install -f
+        ./IBM_Cloud_CLI/ibmcloud cf install  -v 6.51.0
     - name: Restart IBM Cloud
       env:
         IBM_APP_NAME: ${{ secrets.IBM_APP_NAME }}
